@@ -8,7 +8,8 @@
 ## Instaling 
 To run liri-node-app, first clone the repository to your local machine.
 
-HTTPS: https://github.com/nmalk/liri-node-app.git
+HTTPS: 
+`$ git clone https://github.com/nmalk/liri-node-app.git`
 
 You would need to add an .env file at the root of the app with your Spotify API keys.
 For help getting your API keys visit https://developer.spotify.com/documentation/web-api/ 
