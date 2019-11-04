@@ -1,8 +1,14 @@
 
+require("dotenv").config();
 var fs = require("fs");
-var dotenv = require("dotenv").config();
+var axios = require("axios");
+var Spotify = require("node-spotify-api");
 
-
+console.log(process.env.SPOTIFY_ID)
+var spotify = new Spotify({
+  id: process.env.SPOTIFY_ID,
+  secret: process.env.SPOTIFY_SECRET
+});
 
 
 var action = process.argv[2];
@@ -28,14 +34,11 @@ switch(action) {
 
 
 function spotifySong() {
-
-  var keys = require("./keys.js");
-var Spotify = require("node-spotify-api");
-var spotify = new Spotify(keys.spotify);
-
+  console.log(value)
   spotify
-  .request('https://api.spotify.com/v1/tracks' + value)
+  .request('https://api.spotify.com/v1/search?q=' + value +'&type=album,track')
   .then(function(data) {
+    console.log(data)
     console.log("Artist(s):" + data.artists);
     console.log("The song's name:" + data.value);
     console.log("A preview link of the song from:" + data.uri);
@@ -48,14 +51,7 @@ var spotify = new Spotify(keys.spotify);
 }
 // console.log(action, value);
 
-
-
-
-
-
-
 function movieThis() {
-  var axios = require("axios");
   axios
   .get("https://www.omdbapi.com/?t=" + value + "&y=&plot=short&tomatoes=true&apikey=9a68ce23")
   .then(function(response) {
