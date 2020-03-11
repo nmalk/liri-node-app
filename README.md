@@ -2,7 +2,7 @@
 
 ## What it is 
 * LIRI is a command line node app that takes in parameters and gives you back data using API requests.
-* Users will be able to search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
+* Users will be able to search Spotify for songs and OMDB for movies.
 
 
 ## Instaling 
@@ -22,6 +22,13 @@ Once you have the keys, add the following lines of code to your .env file:
 ## How it works
 
 You will be able to run the following commands:
+
+* node liri.js spotify-this-song '<song name here>'
+
+* node liri.js movie-this '<movie name here>'
+
+
+
 
 
 
